@@ -20,7 +20,7 @@ class MoviesController < ApplicationController
     if(!params[:ratings].nil?)
       session[:ratings] = params[:ratings]
     end
-    if(params[:order].nil?)
+    if(!params[:order].nil?)
       session[:order] = params[:order] 
     end
     if(!session[:ratings].nil? || !session[:order].nil?)
