@@ -3,10 +3,13 @@ module MoviesHelper
   def oddness(count)
     count.odd? ?  "odd" :  "even"
   end
-  def chosen_rating?(rating)
-    chosen_ratings = session[:ratings]
-    return true if chosen_ratings.nil?
-    chosen_ratings.include? rating
+  
+  def selected?(rating)
+    if(!session[:ratings].nil?)
+      selected = session[:ratings].include? rating
+    else
+      return true
+    end
   end
   
 end
