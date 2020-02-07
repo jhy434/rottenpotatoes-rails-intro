@@ -6,7 +6,7 @@ module MoviesHelper
   
   def selected(rating)
     if(!session[:ratings].nil?)
-      selected = session[:ratings].include? rating
+      session[:ratings].include? rating
     else
       return true
     end
