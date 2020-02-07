@@ -4,7 +4,7 @@ module MoviesHelper
     count.odd? ?  "odd" :  "even"
   end
   
-  def selected?(rating)
+  def selected(rating)
     if(!session[:ratings].nil?)
       selected = session[:ratings].include? rating
     else
