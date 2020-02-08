@@ -11,7 +11,9 @@ class MoviesController < ApplicationController
   end
   
   def allRatings
-    @all_ratings = Movie.order(:rating).select(:rating)
+    @all_ratings = Movie
+    @all_ratings = @all_ratings.order(:rating)
+    @all_ratings = @all_ratings.select(:rating)
     @all_ratings = @all_ratings.map(&:rating).uniq
   end
   
